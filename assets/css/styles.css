@@ -2,6 +2,7 @@
 	/* Colors */
 	--gray: #656565;
 	--blue: #0191da;
+	--blue-code: 1, 145, 218;
 	--blue1: #6bbbc4;
 	--purple: #9a91b7;
 	--gray-light: #d9d9d9;
@@ -9,7 +10,7 @@
 
 	/* Fonts */
 	--font-family: 'Poppins', Helvetica, Arial, sans-serif;
-	--font-family-title: 'Playfair Display', serif;
+	--font-family-title: 'Inter', serif;
 	--font-size-title: 2rem;
 	--font-size-subtitle: 1.5rem;
 	--font-size-large: 1.125rem;
@@ -35,7 +36,7 @@ body {
 	font-size: var(--font-size);
 	color: var(--dark);
 	text-wrap: pretty;
-	line-height: 1;
+	line-height: 1.6em;
 	scroll-behavior: smooth;
 }
 
@@ -128,6 +129,7 @@ h6 {
 }
 
 .hero__btn {
+	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -136,6 +138,24 @@ h6 {
 	border-radius: 40px;
 	color: #fff;
 	background-color: var(--blue);
+	box-shadow: 0 0 0 0 rgba(var(--blue-code), 0.25);
+	transition: box-shadow var(--transition);
+}
+
+.hero__btn::after {
+	content: '';
+	position: absolute;
+	top: -5px;
+	left: -5px;
+	right: -5px;
+	bottom: -5px;
+	border-radius: 40px;
+	background-color: transparent;
+	transition: box-shadow var(--transition);
+}
+
+.hero__btn:hover::after {
+	box-shadow: 0 0 40px 10px rgba(var(--blue-code), 0.25);
 }
 
 .hero__btn p {
@@ -143,12 +163,16 @@ h6 {
 	margin-bottom: 0;
 }
 
+.hero__btn:hover i {
+	animation: rotate-icon 2s linear alternate infinite;
+}
+
 /* Documentación */
 .documentacion {
 }
 
 .documentacion__box {
-	padding: 60px 24px;
+	padding: 60px 24px 24px;
 	border-radius: 40px;
 	background-color: var(--gray-light);
 }
@@ -176,7 +200,47 @@ h6 {
 }
 
 .documentacion__contenidos {
-	padding: 24px;
+	padding: 60px 24px 40px;
+	display: flex;
+	gap: 24px;
+}
+
+.documentacion__tabs {
+	display: flex;
+	gap: 4px;
+	flex-direction: column;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+}
+
+.documentacion__item {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 8px 16px 8px 12px;
+	line-height: 1;
+	border-radius: 10px;
+	color: var(--gray);
+	transition: background-color var(--transition);
+}
+
+.documentacion__item i {
+	font-size: 0.875rem;
+}
+
+.documentacion__item.activo {
+	color: var(--dark);
+}
+
+.documentacion__item.activo,
+.documentacion__item:hover {
+	background-color: #fff;
+}
+
+.documentacion__item.activo i {
+	color: var(--blue);
 }
 
 /* Responsive */
@@ -188,7 +252,7 @@ h6 {
 	}
 
 	.hero__contenido {
-		padding: 80px 0;
+		padding: 0;
 		min-height: 100dvh;
 	}
 }
@@ -201,6 +265,45 @@ h6 {
 	100% {
 		transform: rotate(360deg) translateX(-50%);
 	}
+}
+
+@keyframes rotate-icon {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	20% {
+		transform: rotate(90deg);
+	}
+
+	40% {
+		transform: rotate(90deg) translateX(-5px);
+	}
+
+	60% {
+		transform: rotate(90deg) translateX(0px);
+	}
+
+	80% {
+		transform: rotate(90deg) translateX(5px);
+	}
+
+	80% {
+		transform: rotate(90deg) translateX(0);
+	}
+
+	100% {
+		transform: rotate(90deg) translateX(-5px);
+	}
+}
+
+button,
+button::after {
+	box-sizing: border-box;
+}
+
+button:active {
+	--border-width: 5px;
 }
 
 /* Scroll */
