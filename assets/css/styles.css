@@ -2,6 +2,7 @@
 	/* Colors */
 	--gray: #656565;
 	--blue: #0191da;
+	--blue-dark: #021b7c;
 	--blue-code: 1, 145, 218;
 	--blue1: #6bbbc4;
 	--purple: #9a91b7;
@@ -11,6 +12,7 @@
 	/* Fonts */
 	--font-family: 'Poppins', Helvetica, Arial, sans-serif;
 	--font-family-title: 'Inter', serif;
+	--font-size-big: 2.25rem;
 	--font-size-title: 2rem;
 	--font-size-subtitle: 1.5rem;
 	--font-size-large: 1.125rem;
@@ -130,32 +132,43 @@ h6 {
 
 .hero__btn {
 	position: relative;
+	z-index: 1;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	gap: 16px;
+	gap: 12px;
 	padding: 12px 30px;
 	border-radius: 40px;
 	color: #fff;
+	overflow: hidden;
 	background-color: var(--blue);
 	box-shadow: 0 0 0 0 rgba(var(--blue-code), 0.25);
 	transition: box-shadow var(--transition);
 }
 
-.hero__btn::after {
+.hero__btn::after,
+.hero__btn::before {
 	content: '';
 	position: absolute;
-	top: -5px;
-	left: -5px;
-	right: -5px;
-	bottom: -5px;
-	border-radius: 40px;
-	background-color: transparent;
-	transition: box-shadow var(--transition);
+	z-index: -1;
+}
+
+.hero__btn::before {
+}
+
+.hero__btn::after {
+	bottom: 0;
+	left: 0;
+	width: 0;
+	height: 4px;
+	background-color: var(--blue-dark);
+	transition: width var(--transition) 0.5s, height var(--transition);
 }
 
 .hero__btn:hover::after {
-	box-shadow: 0 0 40px 10px rgba(var(--blue-code), 0.25);
+	height: 100%;
+	width: 100%;
+	transition: width var(--transition), height var(--transition) 0.5s;
 }
 
 .hero__btn p {
@@ -163,12 +176,20 @@ h6 {
 	margin-bottom: 0;
 }
 
+.hero__btn i {
+	height: 16px;
+	display: flex;
+	align-items: center;
+	transition: transform var(--transition);
+}
+
 .hero__btn:hover i {
-	animation: rotate-icon 2s linear alternate infinite;
+	transform: rotate(90deg);
 }
 
 /* Documentación */
 .documentacion {
+	padding-bottom: 24px;
 }
 
 .documentacion__box {
@@ -179,6 +200,7 @@ h6 {
 
 .documentacion__titulo {
 	text-align: center;
+	margin-bottom: 12px;
 }
 
 .documentacion__titulo .titulo {
@@ -213,17 +235,22 @@ h6 {
 	padding: 0;
 	margin: 0;
 	width: 100%;
+	max-width: 200px;
 }
 
 .documentacion__item {
 	display: flex;
 	align-items: center;
 	gap: 8px;
-	padding: 8px 16px 8px 12px;
+	padding: 12px 16px;
 	line-height: 1;
 	border-radius: 10px;
 	color: var(--gray);
-	transition: background-color var(--transition);
+	transition: background-color var(--transition), color var(--transition);
+}
+
+.documentacion__item > * {
+	pointer-events: none;
 }
 
 .documentacion__item i {
@@ -234,12 +261,103 @@ h6 {
 	color: var(--dark);
 }
 
-.documentacion__item.activo,
-.documentacion__item:hover {
+.documentacion__item.activo {
 	background-color: #fff;
 }
 
+.documentacion__item:not(.activo):hover {
+	background-color: rgba(255, 255, 255, 0.5);
+}
+
 .documentacion__item.activo i {
+	color: var(--blue);
+}
+
+.documentacion__informacion {
+	padding-left: 80px;
+}
+
+.documentacion__informacion .titulo {
+	font-size: var(--font-size-big);
+	font-weight: 700;
+	margin-bottom: 24px;
+}
+
+.documentacion__informacion .subtitulo {
+	font-size: var(--font-size);
+	font-weight: 500;
+	text-transform: uppercase;
+	margin-bottom: 8px;
+}
+
+.documentacion__informacion .ruta {
+	margin-bottom: 12px;
+}
+
+.documentacion__informacion--item {
+	display: none;
+}
+
+.documentacion__informacion--item.activo {
+	display: block;
+	animation: fadeIn var(--transition-slow) forwards;
+}
+
+.documentacion__informacion--contenido {
+	display: flex;
+	gap: 60px;
+}
+
+.documentacion__informacion--contenido > div {
+	width: 100%;
+}
+
+.documentacion__informacion--contenedor {
+	width: 100%;
+	max-width: 250px;
+}
+
+.documentacion__informacion--contenedor p {
+	font-weight: 500;
+	font-size: var(--font-size);
+	margin-bottom: 16px;
+}
+
+.documentacion__informacion--contenedor ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.documentacion__informacion--contenedor li {
+	border-left: 1px solid var(--gray);
+	padding-left: 24px;
+}
+
+/* .footer_ {
+} */
+
+.footer__contenido {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	padding: 50px 16px;
+	margin-top: 50px;
+	border-top: 1px solid var(--gray-light);
+}
+
+.footer__contenido a,
+.footer__contenido p {
+	color: var(--gray);
+	font-size: var(--font-size);
+}
+
+.footer__contenido a strong {
+	transition: color var(--transition);
+}
+
+.footer__contenido a strong:hover {
 	color: var(--blue);
 }
 
@@ -258,6 +376,18 @@ h6 {
 }
 
 /* Animaciones */
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
 @keyframes rotate {
 	0% {
 		transform: rotate(0deg) translateX(-50%);
