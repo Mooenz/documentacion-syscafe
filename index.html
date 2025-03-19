@@ -28,12 +28,12 @@
 				</div>
 			</section>
 
-			<section class="documentacion">
+			<section class="documentacion" id="documentacion">
 				<div class="container">
 					<div class="documentacion__box">
 						<div class="documentacion__titulo">
 							<h2 class="titulo">Documentación</h2>
-							<p>Encontrarás información detallada a respuestas a preguntas frecuentes para ayudarte a comprender.</p>
+							<p>Encontrarás respuestas detalladas a preguntas frecuentes.</p>
 						</div>
 
 						<!-- Contenidos -->
@@ -41,49 +41,49 @@
 							<!-- Tabs -->
 							<ul class="documentacion__tabs">
 								<li>
-									<a href="#documentacion__informacion" class="documentacion__item activo">
+									<a href="#documentacion__informacion" class="documentacion__item activo" data-content="#sistema">
 										<i class="fi fi-rr-settings"></i>
 										<p>Sistema</p>
 									</a>
 								</li>
 
 								<li>
-									<a href="#documentacion__informacion" class="documentacion__item">
+									<a href="#documentacion__informacion" class="documentacion__item" data-content="#archivos">
 										<i class="fi fi-rr-folder-open"></i>
 										<p>Archivos</p>
 									</a>
 								</li>
 
 								<li>
-									<a href="#documentacion__informacion" class="documentacion__item">
+									<a href="#documentacion__informacion" class="documentacion__item" data-content="#movimientos">
 										<i class="fi fi-rr-arrows-repeat"></i>
 										<p>Movimientos</p>
 									</a>
 								</li>
 
 								<li>
-									<a href="#documentacion__informacion" class="documentacion__item">
+									<a href="#documentacion__informacion" class="documentacion__item" data-content="#procesos">
 										<i class="fi fi-rr-apps-add"></i>
 										<p>Procesos</p>
 									</a>
 								</li>
 
 								<li>
-									<a href="#documentacion__informacion" class="documentacion__item">
+									<a href="#documentacion__informacion" class="documentacion__item" data-content="#informes">
 										<i class="fi fi-rr-file-medical-alt"></i>
 										<p>Informes</p>
 									</a>
 								</li>
 
 								<li>
-									<a href="#documentacion__informacion" class="documentacion__item">
+									<a href="#documentacion__informacion" class="documentacion__item" data-content="#utilidades">
 										<i class="fi fi-rr-badge-check"></i>
 										<p>Utilidades</p>
 									</a>
 								</li>
 
 								<li>
-									<a href="#documentacion__informacion" class="documentacion__item">
+									<a href="#documentacion__informacion" class="documentacion__item" data-content="#advertencias">
 										<i class="fi fi-rr-triangle-warning"></i>
 										<p>Advertencias</p>
 									</a>
@@ -92,11 +92,64 @@
 
 							<!-- Info -->
 							<div class="documentacion__informacion" id="documentacion__informacion">
-								<div class="documentacion__informacion--item">
+								<div class="documentacion__informacion--item activo" id="sistema">
 									<h3 class="titulo">Sistema</h3>
-									<p class="subtitulo">Información de la empresa</p>
-									<p><strong>Ruta:</strong> Sistema - Parámetros - Información Empresa</p>
-									<p>Es crucial que, durante la instalación del software Syscafé, ingreses la información de la empresa tal como aparece en el RUT (Registro Único Tributario). Además, ten en cuenta que si realizas alguna actualización en el RUT después de la instalación, deberás actualizar también la información correspondiente en el software Syscafé.</p>
+									<div class="documentacion__informacion--contenido">
+										<div id="infoempresa">
+											<p class="subtitulo">Información de la empresa</p>
+											<p class="ruta"><strong>Ruta:</strong> Sistema - Parámetros - Información Empresa</p>
+											<p>Es crucial que, durante la instalación del software Syscafé, ingreses la información de la empresa tal como aparece en el RUT (Registro Único Tributario). Además, ten en cuenta que si realizas alguna actualización en el RUT después de la instalación, deberás actualizar también la información correspondiente en el software Syscafé.</p>
+										</div>
+
+										<div class="documentacion__informacion--contenedor">
+											<p>En este artículo</p>
+											<ul>
+												<li>
+													<a href="#infoempresa">Información de la empresa</a>
+												</li>
+
+												<li>
+													<a href="#logo">Logo</a>
+												</li>
+
+												<li>
+													<a href="#sucursales">Sucursales</a>
+												</li>
+
+												<li>
+													<a href="#terceros">Terceros</a>
+												</li>
+
+												<li>
+													<a href="#cambiofechas">Cambio fechas futuras</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+								<div class="documentacion__informacion--item" id="archivos">
+									<h3 class="titulo">Archivos</h3>
+								</div>
+
+								<div class="documentacion__informacion--item" id="movimientos">
+									<h3 class="titulo">Movimientos</h3>
+								</div>
+
+								<div class="documentacion__informacion--item" id="procesos">
+									<h3 class="titulo">Procesos</h3>
+								</div>
+
+								<div class="documentacion__informacion--item" id="informes">
+									<h3 class="titulo">Informes</h3>
+								</div>
+
+								<div class="documentacion__informacion--item" id="utilidades">
+									<h3 class="titulo">Utilidades</h3>
+								</div>
+
+								<div class="documentacion__informacion--item" id="advertencias">
+									<h3 class="titulo">Advertencias</h3>
 								</div>
 							</div>
 						</div>
@@ -105,9 +158,18 @@
 			</section>
 		</main>
 
-		<footer>
-			<p>© 2025, Todos los derechos reservados</p>
-			<p>Desarrollado por <a href="https://www.mooenz.me/" target="_blank" rel="noopener noreferrer">Mooenz</a></p>
+		<footer class="footer_">
+			<div class="container">
+				<div class="footer__contenido">
+					<p>© 2025, Todos los derechos reservados</p>
+					<p>
+						Desarrollado por <a href="https://www.mooenz.me/" target="_blank" rel="noopener noreferrer"><strong>Mooenz</strong></a>
+					</p>
+				</div>
+			</div>
 		</footer>
+
+		<!-- Scrips -->
+		<script src="./assets/js/main.min.js"></script>
 	</body>
 </html>
