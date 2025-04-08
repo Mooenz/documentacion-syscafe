@@ -85,10 +85,11 @@ h6 {
 	z-index: -1;
 	width: 500px;
 	height: 500px;
+	opacity: 0.5;
 	filter: blur(100px);
 	border-radius: 50%;
-	background-image: linear-gradient(var(--purple), var(--gray-light));
-	animation: rotate 60s cubic-bezier(0.8, 0.2, 0.2, 0.8) alternate infinite;
+	background-image: linear-gradient(var(--blue1), var(--blue-dark));
+	animation: rotate 40s cubic-bezier(0.8, 0.2, 0.2, 0.8) infinite;
 }
 
 .hero__contenido {
@@ -222,12 +223,14 @@ h6 {
 }
 
 .documentacion__contenidos {
-	padding: 60px 24px 40px;
+	padding: 60px 16px 0 24px;
 	display: flex;
 	gap: 24px;
 }
 
 .documentacion__tabs {
+	position: sticky;
+	top: 12px;
 	display: flex;
 	gap: 4px;
 	flex-direction: column;
@@ -236,6 +239,7 @@ h6 {
 	margin: 0;
 	width: 100%;
 	max-width: 200px;
+	height: fit-content;
 }
 
 .documentacion__item {
@@ -308,13 +312,19 @@ h6 {
 	gap: 60px;
 }
 
-.documentacion__informacion--contenido > div {
+.documentacion__informacion--contenido > div:nth-child(1) {
 	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 60px;
 }
 
 .documentacion__informacion--contenedor {
+	position: sticky;
+	top: 12px;
 	width: 100%;
-	max-width: 250px;
+	max-width: 270px;
+	height: fit-content;
 }
 
 .documentacion__informacion--contenedor p {
@@ -331,7 +341,28 @@ h6 {
 
 .documentacion__informacion--contenedor li {
 	border-left: 1px solid var(--gray);
-	padding-left: 24px;
+	border-radius: 0 8px 8px 0;
+	padding: 12px 0 12px 24px;
+}
+
+.documentacion__informacion--contenedor li.activo {
+	color: var(--blue);
+	background-color: rgba(var(--blue-code), 0.1);
+	border-color: var(--blue);
+}
+
+.documentacion__informacion--contenedor li.activo a {
+	color: var(--blue);
+}
+
+.documentacion__informacion--contenido .image {
+	margin-top: 30px;
+}
+
+.documentacion__informacion--contenido .image img {
+	width: 100%;
+	height: auto;
+	border-radius: 16px;
 }
 
 /* .footer_ {
@@ -351,6 +382,10 @@ h6 {
 .footer__contenido p {
 	color: var(--gray);
 	font-size: var(--font-size);
+}
+
+.footer__contenido p strong {
+	font-weight: 600;
 }
 
 .footer__contenido a strong {
@@ -390,10 +425,13 @@ h6 {
 
 @keyframes rotate {
 	0% {
-		transform: rotate(0deg) translateX(-50%);
+		transform: rotate(0deg) scale(1.5) translateX(-50%);
+	}
+	50% {
+		transform: rotate(180deg) scale(1.5) translateX(-50%);
 	}
 	100% {
-		transform: rotate(360deg) translateX(-50%);
+		transform: rotate(360deg) scale(1.5) translateX(-50%);
 	}
 }
 
