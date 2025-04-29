@@ -8,22 +8,27 @@
 		<link rel="stylesheet" href="./assets/css/icons.min.css" />
 		<link rel="stylesheet" href="./assets/css/font.min.css" />
 		<link rel="stylesheet" href="./assets/css/styles.min.css" />
+		<link rel="stylesheet" href="/assets/css/photoswipe.css" />
 	</head>
 	<body>
 		<h1 style="display: none">Manual de procesos contables del programa SYSCAFÉ</h1>
 		<main>
-			<section class="hero">
+			<section class="hero" id="hero">
 				<div class="container">
 					<div class="hero__contenido">
-						<img src="./assets/images/logo-principal-corto.png" width="600" height="178" title="Imagen logo Ingesoftnet" alt="Logo Ingesoftnet" loading="lazy" />
+						<div class="hero_animated"></div>
 
-						<p class="titulo">Somos tu aliado para dominar Syscafé</p>
-						<p>Hemos diseñado esta guía práctica pensando en ti, para que encuentres soluciones rápidas y entiendas fácilmente los procesos contables del software, explorando todo su potencial de manera autónoma y eficiente.</p>
+						<div class="hero__contenido--blanco">
+							<img src="./assets/images/logo-principal-corto.png" width="600" height="178" title="Imagen logo Ingesoftnet" alt="Logo Ingesoftnet" loading="lazy" />
 
-						<a href="#documentacion" class="hero__btn">
-							<p>Comencemos</p>
-							<i class="fi fi-rr-arrow-small-right"></i>
-						</a>
+							<p class="titulo">Somos tu aliado para dominar Syscafé</p>
+							<p>Hemos diseñado esta guía práctica pensando en ti, para que encuentres soluciones rápidas y entiendas fácilmente los procesos contables del software, explorando todo su potencial de manera autónoma y eficiente.</p>
+
+							<a href="#documentacion" class="hero__btn">
+								<p>Comencemos</p>
+								<i class="fi fi-rr-arrow-small-right"></i>
+							</a>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -102,7 +107,9 @@
 												<p>Es crucial que, durante la instalación del software Syscafé, ingreses la información de la empresa tal como aparece en el RUT (Registro Único Tributario). Además, ten en cuenta que si realizas alguna actualización en el RUT después de la instalación, deberás actualizar también la información correspondiente en el software Syscafé.</p>
 
 												<div class="image">
-													<img src="./assets/images/informacion-empresa.webp" width="1366" height="728" title="Imagen Información de la empresa sotfware Syscafe" alt="Información de la empresa sotfware Syscafe" loading="lazy" />
+													<a href="./assets/images/informacion-empresa.webp" data-pswp-width="1366" data-pswp-height="728" target="_blank">
+														<img src="./assets/images/informacion-empresa.webp" width="1366" height="728" title="Imagen Información de la empresa sotfware Syscafe" alt="Información de la empresa sotfware Syscafe" loading="lazy" />
+													</a>
 												</div>
 											</div>
 
@@ -112,8 +119,10 @@
 
 												<p>Si necesitas registrar información contable en períodos anteriores al inicial y el sistema muestra el siguiente mensaje:</p>
 
-												<div class="imagen">
-													<img src="./assets/images/periodo-inicial.webp" width="1366" height="730" title="" alt="" loading="lazy" />
+												<div class="image">
+													<a href="./assets/images/periodo-inicial.webp" data-pswp-width="1366" data-pswp-height="730" target="_blank">
+														<img src="./assets/images/periodo-inicial.webp" width="1366" height="730" title="" alt="" loading="lazy" />
+													</a>
 												</div>
 											</div>
 
@@ -136,7 +145,15 @@
 												</li>
 
 												<li>
+													<a href="#sucursales">Logo</a>
+												</li>
+
+												<li>
 													<a href="#sucursales">Sucursales</a>
+												</li>
+
+												<li>
+													<a href="#sucursales">Inventarios</a>
 												</li>
 
 												<li>
@@ -144,7 +161,15 @@
 												</li>
 
 												<li>
+													<a href="#sucursales">Otros parámetros</a>
+												</li>
+
+												<li>
 													<a href="#cambiofechas">Cambio fechas futuras</a>
+												</li>
+
+												<li>
+													<a href="#cambiofechas">Facturación y ventas</a>
 												</li>
 											</ul>
 										</div>
@@ -181,6 +206,27 @@
 			</section>
 		</main>
 
+		<!-- Link encuesta -->
+		<section class="link-encuesta" id="link-encuesta">
+			<button class="link-encuesta-cerrar" id="link-encuesta-cerrar">
+				<i class="fi fi-rr-cross-small"></i>
+			</button>
+
+			<div class="container">
+				<p>Podrías dedicar unos minutos para completar una <strong>encuesta de satisfacción</strong>.</p>
+				<a class="hero__btn" href="https://forms.gle/WmZ5EoRRfhQXuLKWA " target="_blank" rel="noopener noreferrer">
+					<p>Ir a la encuesta</p>
+					<i class="fi fi-rr-angle-small-right"></i>
+				</a>
+			</div>
+		</section>
+
+		<!-- Botón volver arriba -->
+		<button class="btn-volver-arriba" id="volver-arriba">
+			<i class="fi fi-rr-arrow-small-up"></i>
+		</button>
+
+		<!-- Footer -->
 		<footer class="footer_">
 			<div class="container">
 				<div class="footer__contenido">
@@ -194,5 +240,8 @@
 
 		<!-- Scrips -->
 		<script src="./assets/js/main.min.js"></script>
+		<!-- <script type="module" src="./assets/js/photoswipe.esm.min.js"></script> -->
+		<!-- <script type="module" src="./assets/js/photoswipe-lightbox.esm.min.js"></script> -->
+		<script type="module" src="./assets/js/photoConf.min.js"></script>
 	</body>
 </html>
