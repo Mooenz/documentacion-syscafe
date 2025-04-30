@@ -65,6 +65,10 @@ h6 {
 	font-family: var(--font-family-title);
 }
 
+.m-0 {
+	margin: 0 !important;
+}
+
 .fi {
 	display: flex;
 }
@@ -317,6 +321,7 @@ h6 {
 	font-weight: 500;
 	text-transform: uppercase;
 	margin-bottom: 8px;
+	color: var(--blue);
 }
 
 .documentacion__informacion .ruta {
@@ -341,10 +346,22 @@ h6 {
 	width: 100%;
 }
 
-.documentacion__informacion--contenido > div:first-child > div:not(:last-child) {
-	padding-top: 30px;
-	padding-bottom: 30px;
-	border-bottom: 1px solid var(--gray1);
+.documentacion__informacion--contenido > div:first-child > div {
+	position: relative;
+	padding-top: 16px;
+	padding-bottom: 16px;
+}
+
+.documentacion__informacion--contenido > div:first-child > div:not(:last-child)::before {
+	content: '';
+	position: absolute;
+	height: 1px;
+	width: 100%;
+	bottom: 0;
+	left: 0;
+	background-color: var(--gray1);
+	mask-image: linear-gradient(to right, #000 0%, transparent 100%);
+	/* border-bottom: 0.5px solid var(--gray1); */
 }
 
 .documentacion__informacion--contenedor {
@@ -368,7 +385,7 @@ h6 {
 }
 
 .documentacion__informacion--contenedor li {
-	border-left: 1px solid var(--gray1);
+	border-left: 0.5px solid var(--gray1);
 	border-radius: 0 8px 8px 0;
 	padding: 12px 0 12px 24px;
 }
@@ -384,13 +401,24 @@ h6 {
 }
 
 .documentacion__informacion--contenido .image {
-	margin-top: 30px;
+	margin: 16px 0;
 }
 
 .documentacion__informacion--contenido .image img {
 	width: 100%;
 	height: auto;
 	border-radius: 16px;
+}
+
+.documentacion__informacion--contenido ul,
+.documentacion__informacion--contenido p {
+	font-weight: 400;
+	font-size: var(--font-size);
+	margin-bottom: 16px;
+}
+
+.documentacion__informacion--contenido ul {
+	padding-left: 18px;
 }
 
 /* .footer_ {
@@ -432,7 +460,7 @@ h6 {
 	z-index: 9999;
 	width: 100%;
 	max-width: 350px;
-	border-radius: 0 8px 8px 0;
+	border-radius: 8px;
 	padding: 28px 26px 16px 24px;
 	color: #fff;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
@@ -445,17 +473,11 @@ h6 {
 	transform: translateY(0);
 }
 
-.link-encuesta::before {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 2px;
-	background-color: var(--blue);
+.link-encuesta-container {
+	padding: 0 16px;
 }
 
-.link-encuesta .container > p {
+.link-encuesta-container > p {
 	color: var(--dark);
 }
 
@@ -527,6 +549,11 @@ h6 {
 	.hero__contenido--blanco {
 		border-radius: 16px;
 		padding: 60px 80px;
+	}
+
+	.documentacion__informacion--contenido > div:first-child > div {
+		padding-top: 24px;
+		padding-bottom: 24px;
 	}
 }
 
