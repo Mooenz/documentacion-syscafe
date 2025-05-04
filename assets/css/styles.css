@@ -4,10 +4,12 @@
 	--gray1: #bdbdbd;
 	--blue: #0191da;
 	--blue-light: #c4e5f6;
+	--blue-light2: #e6f1f9;
 	--blue-dark: #021b7c;
 	--blue-code: 1, 145, 218;
 	--blue1: #6bbbc4;
 	--purple: #9a91b7;
+	--purple-light: #e6dff2;
 	--gray-light: #d9d9d9;
 	--dark: #211b18;
 
@@ -67,6 +69,10 @@ h6 {
 
 .m-0 {
 	margin: 0 !important;
+}
+
+.p-0 {
+	padding-top: 0 !important;
 }
 
 .fi {
@@ -384,20 +390,18 @@ h6 {
 	list-style: none;
 }
 
-.documentacion__informacion--contenedor li {
-	border-left: 0.5px solid var(--gray1);
+.documentacion__informacion--contenedor li a {
+	display: block;
 	border-radius: 0 8px 8px 0;
 	padding: 12px 0 12px 24px;
-}
-
-.documentacion__informacion--contenedor li.activo {
-	color: var(--blue);
-	background-color: rgba(var(--blue-code), 0.1);
-	border-color: var(--blue);
+	width: 100%;
+	border-left: 0.5px solid var(--gray1);
 }
 
 .documentacion__informacion--contenedor li.activo a {
 	color: var(--blue);
+	background-color: rgba(var(--blue-code), 0.1);
+	border-color: var(--blue);
 }
 
 .documentacion__informacion--contenido .image {
@@ -410,11 +414,27 @@ h6 {
 	border-radius: 16px;
 }
 
+.documentacion__informacion--contenido .nota {
+	padding: 16px 16px 12px;
+	border-radius: 16px;
+	margin-bottom: 16px;
+	border: 2px dashed var(--blue);
+	background-color: var(--blue-light2);
+}
+
+.documentacion__informacion--contenido .importante {
+	padding: 16px 16px 12px;
+	border-radius: 16px;
+	margin-bottom: 16px;
+	border: 2px dashed var(--purple);
+	background-color: var(--purple-light);
+}
+
 .documentacion__informacion--contenido ul,
 .documentacion__informacion--contenido p {
 	font-weight: 400;
 	font-size: var(--font-size);
-	margin-bottom: 16px;
+	margin-bottom: 8px;
 }
 
 .documentacion__informacion--contenido ul {
