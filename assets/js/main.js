@@ -28,13 +28,66 @@ const windowIsReady = window.addEventListener('DOMContentLoaded', () => {
 		});
 	});
 
-	// Navegación interna
-	const tabsInternos = $('.documentacion__informacion--contenedor li');
-	tabsInternos.forEach((tab) => {
-		tab.addEventListener('click', (e) => {
-			tabsInternos.forEach((tab) => tab.classList.remove('activo'));
-			tab.classList.add('activo');
+	tabContents.forEach((contenido) => {
+		const enlacesInternos = contenido.querySelectorAll('.documentacion__informacion--contenedor a');
+
+		// Guardamos el observer en una variable externa para poder desconectarlo temporalmente
+		let observer;
+
+		enlacesInternos.forEach((enlace) => {
+			enlace.addEventListener('click', (e) => {
+				e.preventDefault();
+
+				// ⏸ Pausamos el observer
+				if (observer) observer.disconnect();
+
+				const id = enlace.getAttribute('href');
+				const elemento = document.querySelector(id);
+
+				// Scroll suave
+				elemento.scrollIntoView({
+					behavior: 'smooth',
+					block: 'start',
+				});
+
+				// Cambiar clases activas
+				const li = enlace.closest('li');
+				const liPadre = li.parentElement.querySelectorAll('li');
+				liPadre.forEach((li) => li.classList.remove('activo'));
+				li.classList.add('activo');
+
+				// Reactivamos el observer después de un pequeño delay (para que no interfiera con scroll)
+				setTimeout(() => {
+					const contenidos = contenido.querySelectorAll('.documentacion__informacion--contenido > div > div');
+					contenidos.forEach((item) => observer.observe(item));
+				}, 1000); // ajusta el delay si es necesario
+			});
 		});
+
+		// Creamos el observer
+		observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						const id = entry.target.id;
+						const enlace = contenido.querySelector(`a[href="#${id}"]`);
+						if (!enlace) return;
+
+						const li = enlace.closest('li');
+						const liPadre = li.parentElement.querySelectorAll('li');
+						liPadre.forEach((li) => li.classList.remove('activo'));
+						li.classList.add('activo');
+					}
+				});
+			},
+			{
+				rootMargin: '-50% 0px -50% 0px',
+			}
+		);
+
+		// Observamos el contenido
+		const contenidos = contenido.querySelectorAll('.documentacion__informacion--contenido > div > div');
+		contenidos.forEach((item) => observer.observe(item));
 	});
 
 	// Cuando Documentación esté en la pantalla, agregamos el activo al link flotante
