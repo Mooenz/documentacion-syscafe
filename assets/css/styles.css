@@ -400,6 +400,7 @@ h6 {
 	margin-bottom: 16px;
 }
 
+.documentacion__informacion--contenedor ol,
 .documentacion__informacion--contenedor ul {
 	padding: 0;
 	margin: 0;
@@ -467,12 +468,14 @@ h6 {
 }
 
 .documentacion__informacion--contenido ul,
+.documentacion__informacion--contenido ol,
 .documentacion__informacion--contenido p {
 	font-weight: 400;
 	font-size: var(--font-size);
 	margin-bottom: 8px;
 }
 
+.documentacion__informacion--contenido ol,
 .documentacion__informacion--contenido ul {
 	padding-left: 18px;
 }
