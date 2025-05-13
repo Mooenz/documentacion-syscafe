@@ -757,7 +757,7 @@
 									</div>
 								</div>
 
-								<div class="documentacion__informacion--item " id="archivos">
+								<div class="documentacion__informacion--item" id="archivos">
 									<h3 class="titulo">Archivos</h3>
 
 									<div class="documentacion__informacion--contenido">
@@ -1757,22 +1757,905 @@
 
 								<div class="documentacion__informacion--item" id="movimientos">
 									<h3 class="titulo">Movimientos</h3>
+
+									<div class="documentacion__informacion--contenido">
+										<div>
+											<div id="notacontabilidad">
+												<h4 class="subtitulo">Nota de contabilidad</h4>
+												<p><strong>Ruta:</strong> Movimientos - Nota de Contabilidad</p>
+												<p>Este documento se utiliza para respaldar operaciones que no se clasifican dentro de los documentos existentes, como <strong>nómina</strong>, <strong>legalizaciones</strong>, entre otros. Su uso dependerá de la organización de cada entidad.</p>
+												<ul>
+													<li><strong>Importante:</strong> Antes de generar una nota de contabilidad, verifique que en el catálogo de comprobantes exista un documento con la <strong>Clase: Nota de Contabilidad. </strong></li>
+												</ul>
+
+												<div class="image">
+													<a href="./assets/images/nota-contabilidad.png" data-pswp-width="1600" data-pswp-height="848" target="_blank">
+														<img src="./assets/images/nota-contabilidad.png" width="1600" height="848" title="Imagen de como gestionar la nota de contabilidad" alt="Imagen de como gestionar la nota de contabilidad" loading="lazy" />
+													</a>
+												</div>
+
+												<ul>
+													<li><strong>Fecha:</strong> Es fundamental registrar la fecha en la que se realiza la transacción.</li>
+													<li><strong>Detalle Débito/Crédito:</strong> Define la naturaleza del registro. <strong>El sistema no permite registrar ambos en una misma línea</strong>.</li>
+													<li><strong>Botón Adicionar:</strong> Permite seleccionar del <strong>Catálogo Plan de Cuentas</strong> la cuenta contable correspondiente al concepto que se está registrando, junto con su valor.</li>
+													<li><strong>NIT del Tercero:</strong> Si el código contable utilizado tiene configurado el parámetro <strong>"Requiere y acumula saldos por tercero"</strong>, esta columna será obligatoria. <strong>El comprobante no podrá ser guardado sin asignar este dato</strong>.</li>
+												</ul>
+
+												<div class="image">
+													<a href="./assets/images/nota-contabilidad-ejemplo.png" data-pswp-width="1600" data-pswp-height="849" target="_blank">
+														<img src="./assets/images/nota-contabilidad-ejemplo.png" width="1600" height="849" title="Imagen de como gestionar la nota de contabilidad" alt="Imagen de como gestionar la nota de contabilidad" loading="lazy" />
+													</a>
+												</div>
+
+												<ul>
+													<li><strong>Verificación de Sumas Iguales:</strong> Antes de finalizar la transacción, <strong>confirme que los valores de débito y crédito sean iguales</strong>. Si no coinciden, el sistema no permitirá grabar el documento.</li>
+													<li>
+														<strong>Grabar:</strong>
+														<ol>
+															<li>Al finalizar los registros, <strong>revise cuidadosamente los mensajes de validación</strong> que puedan aparecer.</li>
+															<li>Si hay datos faltantes, el sistema notificará el error.</li>
+															<li>Una vez corregido, <strong>confirme la acción</strong> y proceda a imprimir el documento si es necesario.</li>
+														</ol>
+													</li>
+												</ul>
+
+												<div class="image">
+													<a href="./assets/images/nota-contabilidad-ejemplo2.png" data-pswp-width="1600" data-pswp-height="849" target="_blank">
+														<img src="./assets/images/nota-contabilidad-ejemplo2.png" width="1600" height="849" title="Imagen de como gestionar la nota de contabilidad" alt="Imagen de como gestionar la nota de contabilidad" loading="lazy" />
+													</a>
+												</div>
+											</div>
+
+											<div id="comprobanteegreso">
+												<h4 class="subtitulo">Comprobante de Egreso</h4>
+												<p><strong>Ruta:</strong> Movimientos - Comprobante De Egreso</p>
+												<p>Documento contable utilizado para registrar el pago o abono de diversas obligaciones adquiridas por un ente económico. Entre estas se incluyen:</p>
+												<ol>
+													<li>Cuentas por pagar a proveedores.</li>
+													<li>Deudas laborales.</li>
+													<li>Cancelación de gastos operacionales.</li>
+													<li>Anticipos y otras transacciones comerciales.</li>
+												</ol>
+												<ul>
+													<li>
+														<strong>Nota:</strong> Se pueden ingresar los códigos contables de dos formas:
+														<ol>
+															<li><strong>Manual:</strong> Digitando directamente los códigos contables a causar.</li>
+															<li><strong>Opciones rápidas:</strong> Accediendo a herramientas que facilitan la selección de cuentas contables según la naturaleza de la transacción.</li>
+														</ol>
+													</li>
+												</ul>
+											</div>
+
+											<div id="recibocaja">
+												<h4 class="subtitulo">Comprobante de Egreso</h4>
+												<p><strong>Ruta:</strong> Movimientos - Recibo De Caja</p>
+												<p>Documento contable utilizado para registrar los diferentes recaudos de dinero que recibe la empresa por transacciones comerciales. Su contabilización se realiza de la siguiente manera:</p>
+												<ul>
+													<li><strong>Débito:</strong> Se registra la cuenta por donde ingresa el dinero.</li>
+													<li><strong>Crédito:</strong> Se asigna al concepto correspondiente de la transacción.</li>
+												</ul>
+
+												<p><strong>Registro de Códigos Contables:</strong></p>
+												<p>Puede ingresar los códigos contables de dos maneras:</p>
+												<ol>
+													<li><strong>Manual:</strong> Digitando directamente los códigos para registrar los pagos recibidos.</li>
+													<li><strong>Automático:</strong> Afectando documentos previamente causados.</li>
+												</ol>
+												<p><strong>Encabezado del Comprobante:</strong></p>
+												<p>Al crear un comprobante de ingreso, debe completar los siguientes campos:</p>
+												<ul>
+													<li><strong>Fecha de la transacción.</strong></li>
+													<li><strong>Tercero involucrado.</strong></li>
+													<li><strong>Detalle de la operación.</strong></li>
+													<li><strong>Forma de pago utilizada.</strong></li>
+												</ul>
+
+												<div class="image">
+													<a href="./assets/images/recibo-caja.png" data-pswp-width="1600" data-pswp-height="848" target="_blank">
+														<img src="./assets/images/recibo-caja.png" width="1600" height="848" title="Imagen de como gestionar el recibo de caja" alt="Imagen de como gestionar el recibo de caja" loading="lazy" />
+													</a>
+												</div>
+
+												<p>Haz clic en el botón <strong>CXC</strong> para traer automáticamente la información de la <strong>factura que el cliente está cancelando</strong>. De esta manera, el sistema registrará el pago y dará de baja a la <strong>cuenta por cobrar</strong> correspondiente.</p>
+
+												<div class="image">
+													<a href="./assets/images/recibo-caja-ejemplo.png" data-pswp-width="1600" data-pswp-height="848" target="_blank">
+														<img src="./assets/images/recibo-caja-ejemplo.png" width="1600" height="848" title="Imagen de como gestionar el recibo de caja" alt="Imagen de como gestionar el recibo de caja" loading="lazy" />
+													</a>
+												</div>
+
+												<p>Aparecerá una ventana donde deberá <strong>relacionar la información</strong> correspondiente, asegurándose de seleccionar correctamente la factura a cancelar y verificar los valores antes de continuar con el proceso.</p>
+												<p>Si el cliente va a cancelar la CXC en su totalidad, haz clic en el botón TODO para aplicar el pago completo y dar de baja el saldo pendiente de la cuenta por cobrar.</p>
+
+												<div class="image">
+													<a href="./assets/images/recibo-caja-ejemplo2.png" data-pswp-width="1600" data-pswp-height="848" target="_blank">
+														<img src="./assets/images/recibo-caja-ejemplo2.png" width="1600" height="848" title="Imagen de como gestionar el recibo de caja" alt="Imagen de como gestionar el recibo de caja" loading="lazy" />
+													</a>
+												</div>
+
+												<p><strong>Nota:</strong> Si al pulsar el botón <strong>CXC</strong> no aparece el documento a pagar, verifique lo siguiente:</p>
+												<ul>
+													<li><strong>Que exista un documento causado en el sistema</strong> que afecte la cuenta correspondiente.</li>
+													<li><strong>Que los saldos estén correctamente actualizados</strong> en el sistema.</li>
+													<li>
+														<strong>Que la cuenta contable donde se encuentra el saldo tenga configurado el parámetro</strong> <i>"Requiere y acumula saldos por documento relacionado"</i>, dentro del <strong>Plan de Cuentas</strong>. Puede verificarlo en la ruta: <strong>Archivos</strong> <span class="icono"><i class="fi fi-rr-arrow-small-right"></i></span> <strong>Catálogo Plan de Cuentas</strong>.
+													</li>
+													<li><strong>Que la cuenta contable esté asociada a una forma de pago de tipo "Cuentas por Cobrar"</strong>.</li>
+												</ul>
+
+												<p>Si el cliente <strong>NO</strong> va a cancelar la <strong>CXC</strong> en su totalidad, haz clic en el botón <strong>ADICIONAR</strong> para registrar un pago parcial y mantener el saldo pendiente en la cuenta por cobrar.</p>
+
+												<div class="image">
+													<a href="./assets/images/recibo-caja-ejemplo3.png" data-pswp-width="1600" data-pswp-height="848" target="_blank">
+														<img src="./assets/images/recibo-caja-ejemplo3.png" width="1600" height="848" title="Imagen de como gestionar el recibo de caja" alt="Imagen de como gestionar el recibo de caja" loading="lazy" />
+													</a>
+												</div>
+
+												<p>Se habilitará una ventana donde podrá ingresar el valor del abono realizado por el cliente como se observa en la imagen.</p>
+
+												<div class="image">
+													<a href="./assets/images/recibo-caja-ejemplo4.png" data-pswp-width="1600" data-pswp-height="848" target="_blank">
+														<img src="./assets/images/recibo-caja-ejemplo4.png" width="1600" height="848" title="Imagen de como gestionar el recibo de caja" alt="Imagen de como gestionar el recibo de caja" loading="lazy" />
+													</a>
+												</div>
+
+												<p><strong>Ejemplo:</strong></p>
+												<div class="image">
+													<a href="./assets/images/recibo-caja-ejemplo5.png" data-pswp-width="1600" data-pswp-height="848" target="_blank">
+														<img src="./assets/images/recibo-caja-ejemplo5.png" width="1600" height="848" title="Imagen de como gestionar el recibo de caja" alt="Imagen de como gestionar el recibo de caja" loading="lazy" />
+													</a>
+												</div>
+
+												<p>De esta manera, se genera el recibo de caja correspondiente al pago realizado. Por último, haga clic en <strong>GRABAR</strong> para finalizar el proceso.</p>
+
+												<div class="image">
+													<a href="./assets/images/recibo-caja-ejemplo6.png" data-pswp-width="1600" data-pswp-height="848" target="_blank">
+														<img src="./assets/images/recibo-caja-ejemplo6.png" width="1600" height="848" title="Imagen de como gestionar el recibo de caja" alt="Imagen de como gestionar el recibo de caja" loading="lazy" />
+													</a>
+												</div>
+											</div>
+
+											<div id="facturaventa">
+												<h4 class="subtitulo">Factura de venta</h4>
+												<p><strong>Ruta:</strong> Movimientos - Factura de Venta</p>
+												<p>Documento que permite la emisión de facturas a clientes, cumpliendo con los requisitos establecidos en el <strong>Artículo 617 del Estatuto Tributario y el Artículo 11 de la Resolución 0000165 de 2023</strong>.</p>
+												<p>Antes de generar este comprobante, es fundamental realizar la <strong>parametrización de los catálogos</strong> para garantizar su correcta elaboración. Para más información, consulte los siguientes módulos:</p>
+												<br />
+												<p>
+													<span class="icono"><i class="fi fi-rr-check"></i></span> <strong>Terceros</strong> <br />
+												</p>
+												<p>
+													<span class="icono"><i class="fi fi-rr-check"></i></span> <strong>Artículos</strong> <br />
+												</p>
+												<p>
+													<span class="icono"><i class="fi fi-rr-check"></i></span> <strong>Servicios</strong> <br />
+												</p>
+												<p>
+													<span class="icono"><i class="fi fi-rr-check"></i></span> <strong>Tipos de comprobantes</strong> <br />
+												</p>
+												<p>
+													<span class="icono"><i class="fi fi-rr-check"></i></span> <strong>Formas de pago</strong> <br />
+												</p>
+											</div>
+
+											<div id="notacredito">
+												<h4 class="subtitulo">Nota crédito - Facturación</h4>
+												<p><strong>Ruta:</strong> Movimientos - Nota Crédito - Facturación</p>
+												<p>El documento permite revertir o modificar los valores o cantidades registradas en la factura de venta. Una vez habilitado, es fundamental asociar el cliente para que el sistema pueda consultar las facturas de venta registradas y realizar el cruce correspondiente.</p>
+												<ol>
+													<li>Seleccione el ícono “Desde” para consultar los documentos.</li>
+													<li>Haga clic en "Ítems de facturas" para que el sistema recupere la información según el tipo de comprobante.</li>
+													<li>Elija los documentos que desea devolver.</li>
+													<li>Haga clic en el botón ubicado debajo del título "F2" para que la devolución impacte la factura de venta.</li>
+													<li>Active el filtro "Permite sel. cantidades a pasar" para habilitar la columna donde podrá especificar las cantidades a transferir y/o devolver.</li>
+												</ol>
+
+												<div class="image">
+													<a href="./assets/images/nota-credito-facturacion.png" data-pswp-width="1600" data-pswp-height="848" target="_blank">
+														<img src="./assets/images/nota-credito-facturacion.png" width="1600" height="848" title="Imagen de como gestionar la nota crédito - facturación" alt="Imagen de como gestionar la nota crédito - facturación" loading="lazy" />
+													</a>
+												</div>
+
+												<p><strong>Ejemplo: </strong></p>
+												<p>Si la factura ha sido <strong>ACEPTADA</strong> por el cliente, siga estos pasos:</p>
+												<ol>
+													<li>Vaya a la consola de documentos electrónicos y ubique la factura del cliente.</li>
+													<li>Seleccione la factura y haga clic en el botón <strong>consultar eventos</strong>.</li>
+													<li>Si las columnas <strong>A - R - E</strong> aparecen resaltadas, no podrá relacionar la factura en la <strong>nota crédito</strong>. en este caso, deberá proceder de la siguiente manera:</li>
+												</ol>
+
+												<p>Haga clic en el botón <strong>+info</strong> y asocie la fecha relacionada con la factura. Puede seleccionar el mes completo o únicamente el día en que se elaboró la factura.</p>
+
+												<div class="image">
+													<a href="./assets/images/nota-credito-facturacion-ejemplo.png" data-pswp-width="1600" data-pswp-height="848" target="_blank">
+														<img src="./assets/images/nota-credito-facturacion-ejemplo.png" width="1600" height="848" title="Imagen de como gestionar la nota crédito - facturación" alt="Imagen de como gestionar la nota crédito - facturación" loading="lazy" />
+													</a>
+												</div>
+
+												<p>Por favor, no haga clic en el botón de tres puntos (...), ya que si la nota crédito tiene la forma de pago <strong>cuentas por cobrar</strong> y lo selecciona, no podrá ser enviada a la DIAN.</p>
+
+												<div class="image">
+													<a href="./assets/images/nota-credito-facturacion-ejemplo2.png" data-pswp-width="1600" data-pswp-height="848" target="_blank">
+														<img src="./assets/images/nota-credito-facturacion-ejemplo2.png" width="1600" height="848" title="Imagen de como gestionar la nota crédito - facturación" alt="Imagen de como gestionar la nota crédito - facturación" loading="lazy" />
+													</a>
+												</div>
+
+												<p>Para finalizar, después de ingresar la información correspondiente, seleccione la opción <strong>grabar</strong>.</p>
+
+												<a class="enlace" href="https://www.dian.gov.co/impuestos/factura-electronica/Documents/Anexo-Tecnico-Factura-Electronica-de-Venta-vr-1-9.pdf " title="Enlace Anexo Técnico" target="_blank" rel="noopener noreferrer">
+													<div class="icono"><i class="fi fi-rr-link"></i></div>
+													<p class="m-0">Enlace anexo técnico</p>
+												</a>
+											</div>
+
+											<div id="pedidocliente">
+												<h4 class="sutitulo">Pedido de cliente</h4>
+												<p><strong>Ruta:</strong> Movimientos - Pedido de Cliente</p>
+												<p>Es un documento no contable y de carácter opcional, cuyo propósito es registrar y respaldar los pedidos realizados por un cliente. Este documento puede ser utilizado como soporte en el momento de generar la factura de venta, siempre que el adquirente decida concretar la compra del bien o servicio solicitado.</p>
+												<div class="image">
+													<a href="./assets/images/pedido-cliente.png" data-pswp-width="1600" data-pswp-height="848" target="_blank">
+														<img src="./assets/images/pedido-cliente.png" width="1600" height="848" title="Imagen de como gestionar el pedido de cliente" alt="Imagen de como gestionar el pedido de cliente" loading="lazy" />
+													</a>
+												</div>
+
+												<ul>
+													<li><strong>Fecha:</strong> Ingrese la fecha contable en el formato MM/DD/AAAA. Este campo es obligatorio para el registro del comprobante.</li>
+													<li><strong>Cliente:</strong> Seleccione el cliente correspondiente. Este debe estar previamente creado en el catálogo de terceros, con su respectiva clasificación.</li>
+													<li><strong>Vendedor:</strong> Indique el nombre del vendedor, es decir, la persona encargada de realizar la transacción de venta dentro de la empresa.</li>
+													<li><strong>Detalle:</strong> Describa brevemente el concepto o detalle asociado al comprobante. Este campo sirve como referencia para identificar la operación registrada.</li>
+													<li><strong>No Ext.:</strong> Campo opcional que permite ingresar un consecutivo externo de tipo informativo, útil para control o trazabilidad.</li>
+													<li><strong>Forma de Pago:</strong> Seleccione el método de pago utilizado en la operación (contado, crédito, transferencia, etc.).</li>
+													<li><strong>Adicionar:</strong> Opción que permite agregar artículos o servicios (ítems de referencia) al documento.</li>
+													<li><strong>Quitar:</strong> Permite eliminar un artículo o servicio previamente agregado al comprobante que se está elaborando.</li>
+													<li><strong>+Info:</strong> Sección que brinda acceso a información adicional de la factura de venta. Desde aquí puede aplicar filtros, activar parámetros y relacionar campos complementarios según las necesidades del proceso.</li>
+												</ul>
+
+												<p><strong>Ejemplo:</strong></p>
+												<div class="image">
+													<a href="./assets/images/pedido-cliente-ejemplo.png" data-pswp-width="1600" data-pswp-height="848" target="_blank">
+														<img src="./assets/images/pedido-cliente-ejemplo.png" width="1600" height="848" title="Imagen de como gestionar el pedido de cliente" alt="Imagen de como gestionar el pedido de cliente" loading="lazy" />
+													</a>
+												</div>
+
+												<p>Adicionalmente, puede activar la columna de servicios ingresando a la siguiente ruta:</p>
+												<p><strong>Archivos - Catálogo Tipo de Comprobantes - Ver columna Servicios.</strong></p>
+												<p>Esta opción permite habilitar la visualización y uso de conceptos de tipo servicio dentro del comprobante.</p>
+
+												<div class="image">
+													<a href="./assets/images/pedido-cliente-ejemplo2.png" data-pswp-width="1600" data-pswp-height="848" target="_blank">
+														<img src="./assets/images/pedido-cliente-ejemplo2.png" width="1600" height="848" title="Imagen de como gestionar el pedido de cliente" alt="Imagen de como gestionar el pedido de cliente" loading="lazy" />
+													</a>
+												</div>
+
+												<div class="image">
+													<a href="./assets/images/pedido-cliente-ejemplo3.png" data-pswp-width="1600" data-pswp-height="848" target="_blank">
+														<img src="./assets/images/pedido-cliente-ejemplo3.png" width="1600" height="848" title="Imagen de como gestionar el pedido de cliente" alt="Imagen de como gestionar el pedido de cliente" loading="lazy" />
+													</a>
+												</div>
+
+												<div class="nota">
+													<p><strong>Nota:</strong> Es un documento informativo, que no genera imputaciones contables ni afecta los inventarios, ya que su función principal es respaldar el proceso de entrega de bienes sin implicaciones financieras en el sistema.</p>
+												</div>
+											</div>
+
+											<div id="remision">
+												<h4 class="subtitulo">Remisión</h4>
+												<p><strong>Ruta:</strong> Movimientos - Remisión</p>
+												<p>Es un documento mercantil utilizado para dejar constancia de la entrega de un pedido al cliente.</p>
+												<div class="image">
+													<a href="./assets/images/remision.png" data-pswp-width="1600" data-pswp-height="848" target="_blank">
+														<img src="./assets/images/remision.png" width="1600" height="848" title="Imagen de como gestionar la remisión" alt="Imagen de como gestionar la remisión" loading="lazy" />
+													</a>
+												</div>
+
+												<p><strong>Ejemplo: </strong></p>
+												<div class="image">
+													<a href="./assets/images/remision-ejemplo.png" data-pswp-width="1600" data-pswp-height="848" target="_blank">
+														<img src="./assets/images/remision-ejemplo.png" width="1600" height="848" title="Imagen de como gestionar la remisión" alt="Imagen de como gestionar la remisión" loading="lazy" />
+													</a>
+												</div>
+												<div class="nota">
+													<p><strong>Nota:</strong> Es un documento informativo, que no genera imputaciones contables ni afecta los inventarios, ya que su función principal es respaldar el proceso de entrega de bienes sin implicaciones financieras en el sistema.</p>
+												</div>
+											</div>
+
+											<div id="cotizacion">
+												<h4 class="subtitulo">Cotización</h4>
+												<p><strong>Ruta:</strong> Movimientos - Cotización</p>
+												<p>Es un documento que presenta el precio y las condiciones de un producto o servicio ofrecido por una empresa a un cliente potencial. Su función principal es servir como una <strong>propuesta comercial</strong>, la cual puede ser aceptada, modificada o rechazada por el cliente.</p>
+
+												<p>La cotización <strong>no representa una obligación de pago inmediata</strong>, sino una oferta sujeta a negociación entre las partes antes de concretar una venta.</p>
+
+												<div class="image">
+													<a href="./assets/images/cotizacion.png" data-pswp-width="1600" data-pswp-height="848" target="_blank">
+														<img src="./assets/images/cotizacion.png" width="1600" height="848" title="Imagen de como gestionar la cotización" alt="Imagen de como gestionar la cotización" loading="lazy" />
+													</a>
+												</div>
+
+												<p><strong>Ejemplo:</strong></p>
+
+												<div class="image">
+													<a href="./assets/images/cotizacion-ejemplo.png" data-pswp-width="1600" data-pswp-height="848" target="_blank">
+														<img src="./assets/images/cotizacion-ejemplo.png" width="1600" height="848" title="Imagen de como gestionar la cotización" alt="Imagen de como gestionar la cotización" loading="lazy" />
+													</a>
+												</div>
+
+												<div class="nota">
+													<p><strong>Nota:</strong> Es un <strong>documento informativo</strong>, que no genera imputaciones contables ni afecta los inventarios, ya que su función principal es respaldar el proceso de entrega de bienes sin implicaciones financieras en el sistema.</p>
+												</div>
+											</div>
+
+											<div id="facturapos">
+												<h4 class="subtitulo">Factura POS</h4>
+												<p><strong>Ruta:</strong> Archivos - Catálogo de tipos de comprobantes - Clase: Factura de venta POS - Grabar</p>
+												<p>La factura POS en formato físico (papel), como tradicionalmente se conoce, está siendo eliminada del sistema tributario colombiano. A partir del año 2024, los tiquetes generados por máquina registradora con sistema POS, así como otros documentos equivalentes a la factura de venta, deberán ser emitidos obligatoriamente en formato electrónico, de acuerdo con los lineamientos establecidos por la DIAN.</p>
+
+												<div class="importante"><strong>Importante:</strong> Esta transición hace parte del proceso de modernización tributaria y control fiscal, por lo que es fundamental que las empresas adopten los medios electrónicos correspondientes para evitar sanciones o rechazos por parte de la autoridad fiscal.</div>
+
+												<p>Sin embargo, a continuación te indicamos los pasos para crear el comprobante y cómo utilizarlo adecuadamente.</p>
+
+												<div class="image">
+													<a href="./assets/images/factura-pos.png" data-pswp-width="1600" data-pswp-height="848" target="_blank">
+														<img src="./assets/images/factura-pos.png" width="1600" height="848" title="Imagen de como gestionar la factura pos" alt="Imagen de como gestionar la factura pos" loading="lazy" />
+													</a>
+												</div>
+
+												<p><strong>Ruta:</strong> Movimientos - Punto de venta POS - Facturación POS <br />(Como se observa en la imagen)</p>
+
+												<div class="image">
+													<a href="./assets/images/factura-pos1.png" data-pswp-width="1600" data-pswp-height="846" target="_blank">
+														<img src="./assets/images/factura-pos1.png" width="1600" height="846" title="Imagen de como gestionar la factura pos" alt="Imagen de como gestionar la factura pos" loading="lazy" />
+													</a>
+												</div>
+
+												<div class="image">
+													<a href="./assets/images/factura-pos2.png" data-pswp-width="1600" data-pswp-height="848" target="_blank">
+														<img src="./assets/images/factura-pos2.png" width="1600" height="848" title="Imagen de como gestionar la factura pos" alt="Imagen de como gestionar la factura pos" loading="lazy" />
+													</a>
+												</div>
+
+												<p>Para completar la facturación, asegúrate de ingresar los datos mínimos requeridos:</p>
+												<ul>
+													<li>Cliente</li>
+													<li>Artículos</li>
+													<li>Forma de pago</li>
+													<li>Cantidad</li>
+												</ul>
+
+												<div class="image">
+													<a href="./assets/images/factura-pos3.png" data-pswp-width="1600" data-pswp-height="845" target="_blank">
+														<img src="./assets/images/factura-pos3.png" width="1600" height="845" title="Imagen de como gestionar la factura pos" alt="Imagen de como gestionar la factura pos" loading="lazy" />
+													</a>
+												</div>
+
+												<p><strong>Ejemplo: </strong></p>
+												<div class="image">
+													<a href="./assets/images/factura-pos-ejemplo.png" data-pswp-width="1600" data-pswp-height="848" target="_blank">
+														<img src="./assets/images/factura-pos-ejemplo.png" width="1600" height="848" title="Imagen de como gestionar la factura pos" alt="Imagen de como gestionar la factura pos" loading="lazy" />
+													</a>
+												</div>
+
+												<div class="nota">
+													<p><strong>Nota:</strong> Una vez que haya habilitado la factura de venta POS (presionando la tecla F9), tendrá la opción de acceder al listado de teclas abreviadas de dos formas:</p>
+												</div>
+
+												<ol>
+													<li>Presionando la tecla F1.</li>
+													<li>Haciendo clic en el botón <strong>"Teclas Rápidas"</strong>.</li>
+												</ol>
+
+												<p>Este listado ha sido diseñado para simplificar el uso de las diversas funciones disponibles en el sistema, ayudándole a realizar sus tareas de manera más ágil, precisa y eficiente.</p>
+
+												<div class="image">
+													<a href="./assets/images/factura-pos-ejemplo2.png" data-pswp-width="1600" data-pswp-height="848" target="_blank">
+														<img src="./assets/images/factura-pos-ejemplo2.png" width="1600" height="848" title="Imagen de como gestionar la factura pos" alt="Imagen de como gestionar la factura pos" loading="lazy" />
+													</a>
+												</div>
+											</div>
+
+											<div id="devolucionpos">
+												<h4 class="subtitulo">Devolución POS</h4>
+												<p><strong>Ruta:</strong> Archivos - Catálogo de tipos de comprobantes - Clase: Devolución de venta POS - Grabar</p>
+												<p>La Devolución POS permite procesar el retorno de productos que han sido previamente vendidos a través del sistema de Punto de Venta (POS). Esta función es útil para registrar y gestionar los productos devueltos por los clientes, ajustando automáticamente los inventarios y realizando las correcciones en las ventas realizadas.</p>
+
+												<p>A través de la devolución POS, también se puede generar un nuevo comprobante que refleje la devolución, ya sea para reembolsos o para cambiar los productos según la política de la empresa.</p>
+
+												<div class="image">
+													<a href="./assets/images/devolucion-pos.png" data-pswp-width="1600" data-pswp-height="848" target="_blank">
+														<img src="./assets/images/devolucion-pos.png" width="1600" height="848" title="Imagen de como gestionar la devolución pos" alt="Imagen de como gestionar la devolución pos" loading="lazy" />
+													</a>
+												</div>
+
+												<p><strong>Ruta:</strong> Movimientos - Punto de venta POS - Devolución POS</p>
+
+												<div class="image">
+													<a href="./assets/images/devolucion-pos1.png" data-pswp-width="1600" data-pswp-height="848" target="_blank">
+														<img src="./assets/images/devolucion-pos1.png" width="1600" height="848" title="Imagen de como gestionar la devolución pos" alt="Imagen de como gestionar la devolución pos" loading="lazy" />
+													</a>
+												</div>
+
+												<p>Al ingresar el código y número de la factura en el sistema, automáticamente traerá la información relacionada, evitando la necesidad de volver a digitar manualmente. Esto facilita el proceso de devolución y agiliza la gestión de los productos devueltos.</p>
+
+												<div class="image">
+													<a href="./assets/images/devolucion-pos2.png" data-pswp-width="1600" data-pswp-height="848" target="_blank">
+														<img src="./assets/images/devolucion-pos2.png" width="1600" height="848" title="Imagen de como gestionar la devolución pos" alt="Imagen de como gestionar la devolución pos" loading="lazy" />
+													</a>
+												</div>
+
+												<p>Al presionar <strong>Enter</strong> después de ingresar el código y número de la factura, el sistema mostrará automáticamente la información almacenada en ese documento, lo que evita la necesidad de ingresarla manualmente y agiliza el proceso.</p>
+
+												<div class="image">
+													<a href="./assets/images/devolucion-pos3.png" data-pswp-width="1600" data-pswp-height="848" target="_blank">
+														<img src="./assets/images/devolucion-pos3.png" width="1600" height="848" title="Imagen de como gestionar la devolución pos" alt="Imagen de como gestionar la devolución pos" loading="lazy" />
+													</a>
+												</div>
+												<p>Haz clic en la flecha señalada para continuar con el proceso.</p>
+
+												<div class="image">
+													<a href="./assets/images/devolucion-pos4.png" data-pswp-width="1600" data-pswp-height="848" target="_blank">
+														<img src="./assets/images/devolucion-pos4.png" width="1600" height="848" title="Imagen de como gestionar la devolución pos" alt="Imagen de como gestionar la devolución pos" loading="lazy" />
+													</a>
+												</div>
+
+												<p>Inmediatamente, podrá observar que el sistema ha relacionado automáticamente la factura con la devolución.</p>
+
+												<div class="image">
+													<a href="./assets/images/devolucion-pos5.png" data-pswp-width="1600" data-pswp-height="848" target="_blank">
+														<img src="./assets/images/devolucion-pos5.png" width="1600" height="848" title="Imagen de como gestionar la devolución pos" alt="Imagen de como gestionar la devolución pos" loading="lazy" />
+													</a>
+												</div>
+
+												<p>Ahora, haz clic en <strong>Salir</strong> para finalizar el proceso.</p>
+
+												<div class="image">
+													<a href="./assets/images/devolucion-pos6.png" data-pswp-width="1600" data-pswp-height="848" target="_blank">
+														<img src="./assets/images/devolucion-pos6.png" width="1600" height="848" title="Imagen de como gestionar la devolución pos" alt="Imagen de como gestionar la devolución pos" loading="lazy" />
+													</a>
+												</div>
+
+												<p>Recuerda seleccionar la forma de pago y, luego, la <strong>causal de devolución</strong> antes de hacer clic en <strong>GRABAR</strong> para guardar los cambios.</p>
+
+												<div class="image">
+													<a href="./assets/images/devolucion-pos7.png" data-pswp-width="1600" data-pswp-height="848" target="_blank">
+														<img src="./assets/images/devolucion-pos7.png" width="1600" height="848" title="Imagen de como gestionar la devolución pos" alt="Imagen de como gestionar la devolución pos" loading="lazy" />
+													</a>
+												</div>
+
+												<p><strong>Ejemplo: </strong></p>
+												<div class="image">
+													<a href="./assets/images/devolucion-pos-ejemplo.png" data-pswp-width="1600" data-pswp-height="848" target="_blank">
+														<img src="./assets/images/devolucion-pos-ejemplo.png" width="1600" height="848" title="Imagen de como gestionar la devolución pos" alt="Imagen de como gestionar la devolución pos" loading="lazy" />
+													</a>
+												</div>
+											</div>
+
+											<div id="movimiento-compras">
+												<h4 class="subtitulo">Compras</h4>
+												<p><strong>Ruta:</strong> Movimientos - Compras</p>
+												<p>Su principal función es dejar evidencia contable y administrativa de las compras realizadas, ya sea de bienes tangibles (como insumos, equipos, materiales, etc.) o intangibles (como servicios profesionales, mantenimiento, asesorías, entre otros).</p>
+
+												<p>Además, permite llevar un control detallado de los proveedores, los valores involucrados, las condiciones de pago y la naturaleza de cada adquisición.</p>
+
+												<p>El correcto diligenciamiento de este documento es fundamental para la trazabilidad de las transacciones, el cumplimiento de las obligaciones fiscales y la adecuada gestión financiera de la entidad.</p>
+
+												<div class="image">
+													<a href="./assets/images/movimientos-compras.png" data-pswp-width="1600" data-pswp-height="851" target="_blank">
+														<img src="./assets/images/movimientos-compras.png" width="1600" height="851" title="Imagen de como gestionar las compras" alt="Imagen de como gestionar las compras" loading="lazy" />
+													</a>
+												</div>
+
+												<ul>
+													<li>
+														<strong>Fecha:</strong> Ingresa la fecha contable en la que se registra la operación.<br />
+														<strong>Importante:</strong> Utiliza el formato MM/DD/AAAA.
+													</li>
+													<li><strong>Proveedor:</strong> Selecciona el proveedor correspondiente a la compra que estás registrado.</li>
+													<li><strong>Detalles:</strong> Describe brevemente el concepto o motivo del comprobante. Aquí puedes incluir información como el tipo de servicio adquirido o los artículos comprados.</li>
+													<li><strong>Bodega:</strong> Elige la bodega a la cual se destinarán los artículos registrados en la factura de compra.</li>
+													<li><strong>No. Ext:</strong> Si cuentas con un número de documento provisional o externo (por ejemplo, una cotización o documento del proveedor), ingresalo en este campo.</li>
+													<li>
+														<strong>Desde:</strong> Este campo permite vincular documentos previos relacionados, como una orden de compra. Al asociarlos, se garantiza la trazabilidad y control de las transacciones. <br />
+														<div class="nota">
+															<p><strong>Nota:</strong> Si deseas que el cruce con documentos relacionados (como órdenes de compra) sea obligatorio al registrar una compra, debes activar el parámetro avanzado:</p>
+														</div>
+														<p>
+															<i>"Obligatoriamente se deben grabar las compras afectando o cruzando una orden de compra."</i>
+														</p>
+													</li>
+													<li><strong>Grabar:</strong> Una vez completados todos los campos, haz clic en Grabar para guardar la información del documento.</li>
+													<li><strong>Referencia o Servicio:</strong> Ingresa el código del artículo o servicio que estás registrando. Este código identifica de forma única cada ítem en el sistema. <br /><strong>Detalle:</strong> Este campo permite describir el artículo o servicio. Por defecto, el sistema toma el nombre configurado en el catálogo del ítem, aunque puedes editarlo si deseas añadir una descripción más específica para el comprobante.</li>
+													<li><strong>Und./Pres (Unidad de Presentación):</strong> Selecciona la unidad de medida correspondiente al artículo, cómo kilo, gramos, galón, unidad, caja, paquete, entre otros.</li>
+													<li><strong>Cant (Cantidad):</strong> Registra la cantidad total de unidades compradas del artículo o servicio.</li>
+													<li><strong>Valor Bruto:</strong> Indica el valor inicial proporcionado por el proveedor, sin aplicar descuentos ni ajustes.</li>
+													<li><strong>Dto. (Descuento):</strong> Si aplica, ingresa el porcentaje de descuento acordado para el artículo o servicio.</li>
+													<li><strong>Costo Unitario:</strong> Digita el valor real por unidad, tal como fue establecido en la factura de compra con el proveedor, después de aplicar cualquier descuento.</li>
+													<li><strong>Total:</strong> Este campo se calcula automáticamente y muestra el resultado de multiplicar la cantidad comprada por el costo unitario.</li>
+													<li><strong>% IVA: (Porcentaje de IVA / IVA Descontable):</strong> Refleja el porcentaje de IVA registrado previamente en el catálogo del artículo o servicio. El sistema calcula y muestra el valor del IVA como un impuesto descontable.</li>
+													<li><strong>Adiciona:</strong> Permite agregar nuevas referencias de artículos o servicios al comprobante actual.</li>
+													<li><strong>Quita:</strong> Selecciona un artículo o servicio ya ingresado y haz clic en este botón para eliminarlo del documento.</li>
+													<li><strong>Busca:</strong> Facilita la búsqueda de artículos o servicios registrados en el sistema.</li>
+													<li><strong>Descripción:</strong> Campo destinado a ingresar observaciones, descripciones adicionales o propiedades específicas del registro.</li>
+													<li><strong>Limpia:</strong> Elimina todas las referencias de artículos o servicios relacionadas en el comprobante actual.</li>
+													<li><strong>FPago (Forma de Pago):</strong> Selecciona la forma de pago asociada al comprobante: efectivo, transferencia bancaria, cuentas por pagar, entre otras.</li>
+												</ul>
+
+												<div class="image">
+													<a href="./assets/images/movimientos-compras1.png" data-pswp-width="1600" data-pswp-height="848" target="_blank">
+														<img src="./assets/images/movimientos-compras1.png" width="1600" height="848" title="Imagen de como gestionar las compras" alt="Imagen de como gestionar las compras" loading="lazy" />
+													</a>
+												</div>
+
+												<p><strong>Ejemplo:</strong></p>
+
+												<div class="image">
+													<a href="./assets/images/movimientos-compras-ejemplo.png" data-pswp-width="1600" data-pswp-height="848" target="_blank">
+														<img src="./assets/images/movimientos-compras-ejemplo.png" width="1600" height="848" title="Imagen de como gestionar las compras" alt="Imagen de como gestionar las compras" loading="lazy" />
+													</a>
+												</div>
+
+												<p><strong>Pestaña: Impuestos / Retenciones</strong></p>
+												<p>Esta pestaña permite gestionar los impuestos y retenciones aplicables a la transacción registrada en el comprobante de compra. Su correcto diligenciamiento garantiza el cumplimiento de las obligaciones fiscales de la entidad.</p>
+
+												<div class="image">
+													<a href="./assets/images/movimientos-compras2.png" data-pswp-width="1600" data-pswp-height="848" target="_blank">
+														<img src="./assets/images/movimientos-compras2.png" width="1600" height="848" title="Imagen de como gestionar las compras" alt="Imagen de como gestionar las compras" loading="lazy" />
+													</a>
+												</div>
+
+												<div class="image">
+													<a href="./assets/images/movimientos-compras3.png" data-pswp-width="1600" data-pswp-height="848" target="_blank">
+														<img src="./assets/images/movimientos-compras3.png" width="1600" height="848" title="Imagen de como gestionar las compras" alt="Imagen de como gestionar las compras" loading="lazy" />
+													</a>
+												</div>
+
+												<p>En la <strong>pestaña de Impuestos</strong>, el sistema ofrece tres opciones (A, B y C) para aplicar la <strong>retención en la fuente</strong>. Es importante tener en cuenta que:</p>
+
+												<p><strong>Si seleccionas la opción A, B o C para la retención en la fuente en la pestaña de Impuestos, debes asegurarte de marcar la misma letra (A, B o C) en la columna Ret Fte de la pestaña Inventarios/Servicios.</strong></p>
+
+												<p>Esto garantiza que el sistema relacione correctamente la base gravable del ítem con la retención correspondiente, permitiendo un cálculo automático y coherente del valor a retener.</p>
+
+												<div class="image">
+													<a href="./assets/images/movimientos-compras4.png" data-pswp-width="1600" data-pswp-height="848" target="_blank">
+														<img src="./assets/images/movimientos-compras4.png" width="1600" height="848" title="Imagen de como gestionar las compras" alt="Imagen de como gestionar las compras" loading="lazy" />
+													</a>
+												</div>
+
+												<div class="image">
+													<a href="./assets/images/movimientos-compras5.png" data-pswp-width="1600" data-pswp-height="848" target="_blank">
+														<img src="./assets/images/movimientos-compras5.png" width="1600" height="848" title="Imagen de como gestionar las compras" alt="Imagen de como gestionar las compras" loading="lazy" />
+													</a>
+												</div>
+
+												<p>Así es como se visualiza la compra registrada. Este registro queda disponible para consultas, reportes contables y seguimiento de compras dentro del sistema.</p>
+
+												<div class="importante">
+													<p><strong>Importante:</strong> En la pestaña <i>Otros conceptos</i> <strong>no deben incluirse servicios</strong>, ya que esto puede generar errores en el envío del documento a la DIAN, ocasionando que el valor aparezca en <strong>$0</strong> y no sea aceptado correctamente.</p>
+												</div>
+											</div>
+
+											<div>
+												<h4 class="subtitulo">Inventarios</h4>
+												<p>Les recordamos la importancia de mantener actualizados y correctamente registrados los inventarios. Esto garantiza un control eficiente de los productos, evita pérdidas y asegura la trazabilidad en cada etapa del proceso.</p>
+
+												<p>Por favor, verifiquen que las entradas y salidas estén debidamente soportadas y reportadas en el sistema correspondiente.</p>
+											</div>
+
+											<div id="notasdeinventarios">
+												<h4 class="subtitulo">Nota de inventarios</h4>
+												<p><strong>Ruta:</strong> Movimientos - Inventario - Nota de inventario</p>
+
+												<div class="importante">
+													<strong>Importante:</strong>
+													Cuando aparezca el mensaje que se muestra en la imagen, significa que el comprobante <strong>no ha sido creado</strong>. En ese caso, deben ingresar al <strong>catálogo de Tipos de Comprobantes</strong> y proceder con su creación para poder continuar con el proceso correctamente.
+												</div>
+
+												<div class="image">
+													<a href="./assets/images/notas-de-inventarios.png" data-pswp-width="1600" data-pswp-height="848" target="_blank">
+														<img src="./assets/images/notas-de-inventarios.png" width="1600" height="848" title="Imagen de como gestionar la nota de inventarios" alt="Imagen de como gestionar la nota de inventarios" loading="lazy" />
+													</a>
+												</div>
+
+												<p>Una vez creado el comprobante, pueden continuar con el proceso sin inconvenientes.</p>
+
+												<div class="image">
+													<a href="./assets/images/notas-de-inventarios1.png" data-pswp-width="1600" data-pswp-height="848" target="_blank">
+														<img src="./assets/images/notas-de-inventarios1.png" width="1600" height="848" title="Imagen de como gestionar la nota de inventarios" alt="Imagen de como gestionar la nota de inventarios" loading="lazy" />
+													</a>
+												</div>
+
+												<p>Documento contable utilizado para registrar el ingreso de inventario de mercancía.</p>
+												<p>Este tipo de ingreso aplica para cualquier motivo distinto a una factura de compra, permitiendo realizar movimientos de ajuste directamente en el comprobante.</p>
+
+												<ul>
+													<li><strong>Fecha:</strong> Permite digitar la fecha de causación del ingreso a realizar.</li>
+													<li><strong>Detalle:</strong> Espacio para describir el detalle del comprobante.</li>
+													<li><strong>Tercero:</strong> Ingrese el NIT, cédula de ciudadanía y/o nombre del solicitante.</li>
+													<li><strong>No Ext.:</strong> Si cuenta con un consecutivo de un documento provisional o de origen externo, debe indicarlo aquí.</li>
+													<li><strong>Bodega Origen:</strong> Seleccione la bodega correspondiente a este comprobante.</li>
+													<li><strong>Cuenta:</strong> Corresponde a la cuenta contable de contrapartida para la imputación.</li>
+													<li><strong>Adiciona:</strong> Habilita un nuevo ítem para registrar referencias y/o productos.</li>
+													<li><strong>Quita:</strong> Permite eliminar el ítem seleccionado.</li>
+													<li><strong>Busca:</strong> Facilita la búsqueda de productos a través del catálogo de artículos.</li>
+													<li><strong>Excel:</strong> Opción para exportar el documento a una plantilla de Excel.</li>
+													<li><strong>CCO – SCC:</strong> Permite relacionar un centro de costo y subcentro de costo.</li>
+													<li><strong>Grabar:</strong> Guarda el documento una vez diligenciado.</li>
+												</ul>
+
+												<p><strong>Consulta posterior en el Kardex</strong></p>
+												<p>Una vez elaborada la nota de inventario, podrá ingresar al Kardex, consultar la referencia correspondiente y observar la rotación del inventario.</p>
+
+												<p><strong>Ejemplo:</strong></p>
+												<div class="image">
+													<a href="./assets/images/notas-de-inventarios-ejemplo.png" data-pswp-width="1600" data-pswp-height="848" target="_blank">
+														<img src="./assets/images/notas-de-inventarios-ejemplo.png" width="1600" height="848" title="Imagen de como gestionar la nota de inventarios" alt="Imagen de como gestionar la nota de inventarios" loading="lazy" />
+													</a>
+												</div>
+											</div>
+
+											<div id="trasladobodegas">
+												<h4 class="subtitulo">Traslado entre bodegas</h4>
+												<p><strong>Ruta:</strong> Movimientos - Inventario - Traslado Entre Bodegas</p>
+												<p>Permite realizar el traslado de inventarios entre bodegas, afectando únicamente las <strong>cantidades</strong> de los productos, <strong>sin modificar su costo</strong>.</p>
+												<div class="image">
+													<a href="./assets/images/traslado-bodegas.png" data-pswp-width="1600" data-pswp-height="848" target="_blank">
+														<img src="./assets/images/traslado-bodegas.png" width="1600" height="848" title="Imagen de como gestionar el traslado entre bodegas" alt="Imagen de como gestionar el traslado entre bodegas" loading="lazy" />
+													</a>
+												</div>
+
+												<ul>
+													<li><strong>Fecha:</strong> Digite la fecha contable en formato MM/DD/AAAA.</li>
+													<li><strong>Detalle:</strong> Campo para describir el motivo o información relevante del comprobante.</li>
+													<li><strong>Tercero:</strong> Seleccione el tercero asociado. Este debe estar previamente creado en el catálogo de terceros con su respectiva clasificación.</li>
+													<li><strong>Bodega Origen:</strong> Seleccione la bodega desde la cual se enviará la mercancía.</li>
+													<li><strong>Bodega Destino:</strong> Seleccione la bodega a la cual se recibirá la mercancía.</li>
+													<li><strong>Grabar:</strong> Permite guardar el documento de traslado.</li>
+													<li><strong>Adiciona:</strong> Habilita un nuevo ítem para registrar la referencia y/o producto a trasladar.</li>
+													<li><strong>Quita:</strong> Elimina el ítem previamente seleccionado.</li>
+													<li><strong>Busca:</strong> Permite consultar productos a través del catálogo de artículos.</li>
+													<li><strong>Saldos:</strong> Consulta los saldos disponibles de los artículos, de forma específica o general.</li>
+													<li><strong>Excel:</strong> Exporta el documento en una plantilla de Excel.</li>
+													<li><strong>Kits:</strong> Selecciona kits de armado que agrupan varias referencias para su ingreso al inventario.</li>
+													<li><strong>Herramientas:</strong> Accede a opciones adicionales relacionadas con el comprobante.</li>
+												</ul>
+
+												<p><strong>Consulta en Kardex</strong></p>
+												<p>Una vez elaborado el traslado entre bodegas, puede ingresar al Kardex, consultar la referencia y verificar las cantidades disponibles por cada bodega.</p>
+												<p><strong>Ejemplo: </strong></p>
+
+												<div class="image">
+													<a href="./assets/images/traslado-bodegas-ejemplo.png" data-pswp-width="1600" data-pswp-height="848" target="_blank">
+														<img src="./assets/images/traslado-bodegas-ejemplo.png" width="1600" height="848" title="Imagen de como gestionar el traslado entre bodegas" alt="Imagen de como gestionar el traslado entre bodegas" loading="lazy" />
+													</a>
+												</div>
+											</div>
+
+											<div id="ordentrasladobodegas">
+												<h4 class="subtitulo">Orden de traslado entre bodegas</h4>
+												<p><strong>Ruta:</strong> Movimientos - Inventario - Orden De Traslado Entre Bodegas</p>
+											</div>
+
+											<div id="salidainventarios">
+												<h4 class="subtitulo">Salida de inventarios</h4>
+												<p><strong>Ruta: </strong>Movimientos - Inventario - Salida de Inventario</p>
+											</div>
+										</div>
+
+										<div class="documentacion__informacion--contenedor">
+											<p>En este artículo</p>
+											<ul>
+												<li class="activo">
+													<a href="#notacontabilidad">Nota de contabilidad</a>
+												</li>
+
+												<li>
+													<a href="#comprobanteegreso">Comprobante de egreso</a>
+												</li>
+
+												<li>
+													<a href="#recibocaja">Recibo de caja</a>
+												</li>
+
+												<li>
+													<a href="#facturaventa">Factura de venta</a>
+												</li>
+
+												<li>
+													<a href="#notacredito">Nota crédito - Facturación</a>
+												</li>
+
+												<li>
+													<a href="#pedidocliente">Pedido de cliente</a>
+												</li>
+
+												<li>
+													<a href="#remision">Remisión</a>
+												</li>
+
+												<li>
+													<a href="#cotizacion">Cotización</a>
+												</li>
+
+												<li>
+													<a href="#facturapos">Factura POS</a>
+												</li>
+
+												<li>
+													<a href="#devolucionpos">Devolución POS</a>
+												</li>
+
+												<li>
+													<a href="#movimiento-compras">Compras</a>
+												</li>
+
+												<li>
+													<a href="#notasdeinventarios">Nota de inventarios</a>
+												</li>
+
+												<li>
+													<a href="#trasladobodegas">Traslado entre bodegas</a>
+												</li>
+
+												<li>
+													<a href="#ordentrasladobodegas">Orden de traslado entre bodegas</a>
+												</li>
+
+												<li>
+													<a href="#salidainventarios">Salida de inventarios</a>
+												</li>
+											</ul>
+										</div>
+									</div>
 								</div>
 
 								<div class="documentacion__informacion--item" id="procesos">
 									<h3 class="titulo">Procesos</h3>
+
+									<div class="documentacion__informacion--contenido">
+										<div>
+											<div id="generales">
+												<h4 class="subtitulo">Generales</h4>
+												<p><strong>Ruta:</strong> Procesos - Generales - Importar Información - Importar Catálogos</p>
+												<p>Este proceso permite ingresar información al sistema mediante plantillas en Excel, facilitando la carga masiva de datos en los diferentes catálogos disponibles.</p>
+												<p><strong>Pasos a seguir:</strong></p>
+												<ol>
+													<li>
+														<strong>Ingresar a la opción de Importar Catálogos.</strong><br />
+														Desde esta opción podrás cargar archivos en formato Excel para actualizar o crear registros en los catálogos del sistema.
+													</li>
+												</ol>
+
+												<div class="image">
+													<a href="./assets/images/procesos-generales1.png" data-pswp-width="1600" data-pswp-height="848" target="_blank">
+														<img src="./assets/images/procesos-generales1.png" width="1600" height="848" title="Imagen de como gestionar los procesos generales" alt="Imagen de como gestionar los procesos generales" loading="lazy" />
+													</a>
+												</div>
+
+												<ol start="2">
+													<li>
+														<strong>Habilitar el candado.</strong> <br />
+														Es indispensable activar el candado para permitir la selección y edición de los catálogos correspondientes.
+													</li>
+												</ol>
+
+												<div class="image">
+													<a href="./assets/images/procesos-generales2.png" data-pswp-width="1600" data-pswp-height="848" target="_blank">
+														<img src="./assets/images/procesos-generales2.png" width="1600" height="848" title="Imagen de como gestionar los procesos generales" alt="Imagen de como gestionar los procesos generales" loading="lazy" />
+													</a>
+												</div>
+
+												<ol start="3">
+													<li>
+														<strong>Seleccionar el catálogo o grupo de archivos a importar.</strong> <br />
+														El sistema permite elegir uno o varios catálogos según lo que necesites cargar (por ejemplo, terceros, artículos, servicios, etc.).
+													</li>
+												</ol>
+
+												<div class="image">
+													<a href="./assets/images/procesos-generales3.png" data-pswp-width="1600" data-pswp-height="848" target="_blank">
+														<img src="./assets/images/procesos-generales3.png" width="1600" height="848" title="Imagen de como gestionar los procesos generales" alt="Imagen de como gestionar los procesos generales" loading="lazy" />
+													</a>
+												</div>
+
+												<p>Al hacer clic en la opción <strong>"Opciones"</strong>, ubicada en la parte superior derecha de la pantalla, se habilitarán diversos <strong>campos de configuración</strong> que permiten personalizar y ajustar el proceso de importación como se observa en la imagen.</p>
+
+												<div class="image">
+													<a href="./assets/images/procesos-generales4.png" data-pswp-width="1600" data-pswp-height="848" target="_blank">
+														<img src="./assets/images/procesos-generales4.png" width="1600" height="848" title="Imagen de como gestionar los procesos generales" alt="Imagen de como gestionar los procesos generales" loading="lazy" />
+													</a>
+												</div>
+
+												<div class="nota">
+													<p><strong>Nota:</strong> Es fundamental no cambiar los nombres de los archivos Excel una vez son exportados desde el sistema, ya que estos nombres son necesarios para que el sistema los reconozca correctamente durante el proceso de importación.</p>
+												</div>
+
+												<p>Modificar el nombre del archivo puede impedir su correcta lectura y generar errores al importar la información.</p>
+
+												<p><strong>Archivos:</strong> Esta opción permite seleccionar la carpeta o ubicación donde se encuentran guardadas las estructuras (plantillas) en Excel para importar.</p>
+												<p><strong>Indique la ruta:</strong> Selecciona la ruta exacta en tu equipo o red donde esté ubicado el archivo del catálogo que deseas importar.</p>
+												<p><strong>Importar:</strong> Finalmente, haz clic en el botón "Importar", ubicado en la parte inferior de la ventana, para cargar la información al sistema.</p>
+
+												<div class="image">
+													<a href="./assets/images/procesos-generales5.png" data-pswp-width="1600" data-pswp-height="848" target="_blank">
+														<img src="./assets/images/procesos-generales5.png" width="1600" height="848" title="Imagen de como gestionar los procesos generales" alt="Imagen de como gestionar los procesos generales" loading="lazy" />
+													</a>
+												</div>
+
+												<p><strong>Así es como el sistema confirma la finalización del proceso:</strong> Una vez realizada la importación, el sistema mostrará un mensaje indicando que la información ha sido cargada correctamente, confirmando que el proceso se ejecutó sin errores.</p>
+												<div class="image">
+													<a href="./assets/images/procesos-generales6.png" data-pswp-width="1600" data-pswp-height="848" target="_blank">
+														<img src="./assets/images/procesos-generales6.png" width="1600" height="848" title="Imagen de como gestionar los procesos generales" alt="Imagen de como gestionar los procesos generales" loading="lazy" />
+													</a>
+												</div>
+
+												<p><strong>Ruta:</strong> Procesos - Generales - Exportar Información</p>
+
+												<p>Este proceso permite exportar información desde los distintos catálogos del sistema utilizando plantillas en formato Excel, facilitando la revisión, edición o respaldo de datos.</p>
+
+												<p><strong>Pasos para la exportación:</strong></p>
+											</div>
+										</div>
+
+										<div class="documentacion__informacion--contenedor">
+											<p>En este artículo</p>
+											<ul>
+												<li class="activo">
+													<a href="#catalogoplandecuentas">Generales</a>
+												</li>
+											</ul>
+										</div>
+									</div>
 								</div>
 
 								<div class="documentacion__informacion--item" id="informes">
 									<h3 class="titulo">Informes</h3>
+
+									<div class="documentacion__informacion--contenido">
+										<div></div>
+
+										<div class="documentacion__informacion--contenedor">
+											<p>En este artículo</p>
+											<ul>
+												<li class="activo">
+													<a href="#catalogoplandecuentas"></a>
+												</li>
+											</ul>
+										</div>
+									</div>
 								</div>
 
 								<div class="documentacion__informacion--item" id="utilidades">
 									<h3 class="titulo">Utilidades</h3>
+
+									<div class="documentacion__informacion--contenido">
+										<div></div>
+
+										<div class="documentacion__informacion--contenedor">
+											<p>En este artículo</p>
+											<ul>
+												<li class="activo">
+													<a href="#catalogoplandecuentas"></a>
+												</li>
+											</ul>
+										</div>
+									</div>
 								</div>
 
 								<div class="documentacion__informacion--item" id="advertencias">
 									<h3 class="titulo">Advertencias</h3>
+
+									<div class="documentacion__informacion--contenido">
+										<div></div>
+
+										<div class="documentacion__informacion--contenedor">
+											<p>En este artículo</p>
+											<ul>
+												<li class="activo">
+													<a href="#catalogoplandecuentas"></a>
+												</li>
+											</ul>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
