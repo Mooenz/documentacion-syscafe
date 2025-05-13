@@ -44,10 +44,14 @@ const windowIsReady = window.addEventListener('DOMContentLoaded', () => {
 				const id = enlace.getAttribute('href');
 				const elemento = document.querySelector(id);
 
-				// Scroll suave
-				elemento.scrollIntoView({
+				// Scroll con offset
+				const offset = -76; // ajusta según tu cabecera fija o diseño
+				const rect = elemento.getBoundingClientRect();
+				const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+				// console.log(rect.top + scrollTop + offset);
+				window.scrollTo({
+					top: rect.top + scrollTop + offset,
 					behavior: 'smooth',
-					block: 'start',
 				});
 
 				// Cambiar clases activas
@@ -56,11 +60,11 @@ const windowIsReady = window.addEventListener('DOMContentLoaded', () => {
 				liPadre.forEach((li) => li.classList.remove('activo'));
 				li.classList.add('activo');
 
-				// Reactivamos el observer después de un pequeño delay (para que no interfiera con scroll)
+				// Reactivamos el observer después de un pequeño delay
 				setTimeout(() => {
 					const contenidos = contenido.querySelectorAll('.documentacion__informacion--contenido > div > div');
 					contenidos.forEach((item) => observer.observe(item));
-				}, 1000); // ajusta el delay si es necesario
+				}, 800); // ajusta el delay si hace falta
 			});
 		});
 
