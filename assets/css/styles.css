@@ -321,11 +321,6 @@ h6 {
 	color: var(--blue);
 }
 
-.documentacion__informacion {
-	padding-left: 80px;
-	min-height: 350px;
-}
-
 .documentacion__informacion .titulo {
 	font-size: var(--font-size-big);
 	font-weight: 700;
@@ -652,6 +647,11 @@ h6 {
 	.documentacion__informacion--contenido > div:first-child > div {
 		padding-top: 24px;
 		padding-bottom: 24px;
+	}
+
+	.documentacion__informacion {
+		padding-left: 80px;
+		min-height: 350px;
 	}
 }
 
