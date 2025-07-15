@@ -1,6 +1,9 @@
 const windowIsReady = window.addEventListener('DOMContentLoaded', () => {
 	const $ = (selector) => document.querySelectorAll(selector);
 
+	// Tamaño de la ventana
+	const windowWidth = window.innerWidth;
+
 	// Navegación tabs
 	const tabs = $('.documentacion__tabs .documentacion__item ');
 	const tabContents = $('.documentacion__informacion .documentacion__informacion--item');
@@ -30,57 +33,84 @@ const windowIsReady = window.addEventListener('DOMContentLoaded', () => {
 
 	tabContents.forEach((contenido) => {
 		const enlacesInternos = contenido.querySelectorAll('.documentacion__informacion--contenedor a');
-
-		// Guardamos el observer en una variable externa para poder desconectarlo temporalmente
+		const select = contenido.querySelector('.documentacion__informacion--select select');
 		let observer;
 
+		// Función compartida para scroll, activar clase y reiniciar observer
+		function scrollYActivar(id) {
+			if (observer) observer.disconnect();
+
+			const elemento = document.querySelector(id);
+			if (!elemento) return;
+
+			// Scroll con offset
+			const offset = windowWidth < 992 ? -140 : -76;
+			const rect = elemento.getBoundingClientRect();
+			const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+			window.scrollTo({
+				top: rect.top + scrollTop + offset,
+				behavior: 'smooth',
+			});
+
+			// Activar clase en el <li>
+			const enlace = contenido.querySelector(`a[href="${id}"]`);
+			if (enlace) {
+				const li = enlace.closest('li');
+				const liPadre = li?.parentElement?.querySelectorAll('li') || [];
+				liPadre.forEach((li) => li.classList.remove('activo'));
+				li.classList.add('activo');
+			}
+
+			// Cambiar el valor del select si es necesario
+			if (select && select.value !== id) {
+				select.value = id;
+			}
+
+			// Reactivar observer
+			setTimeout(() => {
+				const contenidos = contenido.querySelectorAll('.documentacion__informacion--contenido > div > div');
+				contenidos.forEach((item) => observer.observe(item));
+			}, 800);
+		}
+
+		// Click en enlaces
 		enlacesInternos.forEach((enlace) => {
 			enlace.addEventListener('click', (e) => {
 				e.preventDefault();
-
-				// ⏸ Pausamos el observer
-				if (observer) observer.disconnect();
-
 				const id = enlace.getAttribute('href');
-				const elemento = document.querySelector(id);
-
-				// Scroll con offset
-				const offset = -76; // ajusta según tu cabecera fija o diseño
-				const rect = elemento.getBoundingClientRect();
-				const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-				// console.log(rect.top + scrollTop + offset);
-				window.scrollTo({
-					top: rect.top + scrollTop + offset,
-					behavior: 'smooth',
-				});
-
-				// Cambiar clases activas
-				const li = enlace.closest('li');
-				const liPadre = li.parentElement.querySelectorAll('li');
-				liPadre.forEach((li) => li.classList.remove('activo'));
-				li.classList.add('activo');
-
-				// Reactivamos el observer después de un pequeño delay
-				setTimeout(() => {
-					const contenidos = contenido.querySelectorAll('.documentacion__informacion--contenido > div > div');
-					contenidos.forEach((item) => observer.observe(item));
-				}, 800); // ajusta el delay si hace falta
+				scrollYActivar(id);
 			});
 		});
 
-		// Creamos el observer
+		// Cambio en el select
+		if (select) {
+			select.addEventListener('change', (e) => {
+				const selectedValue = e.target.value;
+				if (selectedValue) {
+					scrollYActivar(selectedValue);
+				}
+			});
+		}
+
+		// Intersection Observer
 		observer = new IntersectionObserver(
 			(entries) => {
 				entries.forEach((entry) => {
 					if (entry.isIntersecting) {
-						const id = entry.target.id;
-						const enlace = contenido.querySelector(`a[href="#${id}"]`);
+						const id = `#${entry.target.id}`;
+						const enlace = contenido.querySelector(`a[href="${id}"]`);
 						if (!enlace) return;
 
+						// Activar clase en <li>
 						const li = enlace.closest('li');
-						const liPadre = li.parentElement.querySelectorAll('li');
+						const liPadre = li?.parentElement?.querySelectorAll('li') || [];
 						liPadre.forEach((li) => li.classList.remove('activo'));
 						li.classList.add('activo');
+
+						// Cambiar valor del <select>
+						if (select && select.value !== id) {
+							select.value = id;
+						}
 					}
 				});
 			},
@@ -89,7 +119,7 @@ const windowIsReady = window.addEventListener('DOMContentLoaded', () => {
 			}
 		);
 
-		// Observamos el contenido
+		// Iniciar observación
 		const contenidos = contenido.querySelectorAll('.documentacion__informacion--contenido > div > div');
 		contenidos.forEach((item) => observer.observe(item));
 	});
@@ -156,4 +186,19 @@ const windowIsReady = window.addEventListener('DOMContentLoaded', () => {
 	const year = new Date().getFullYear();
 	const yearElement = document.querySelector('#fecha');
 	yearElement.innerHTML = year;
+
+	// const selects = document.querySelectorAll('.documentacion__informacion--select select');
+	// selects.forEach((select) => {
+	// 	select.addEventListener('change', (e) => {
+	// 		const selectedValue = e.target.value;
+
+	// 		// Vamos al link del select
+	// 		if (selectedValue) {
+	// 			const link = document.querySelector(`a[href="${selectedValue}"]`);
+	// 			if (link) {
+	// 				link.click();
+	// 			}
+	// 		}
+	// 	});
+	// });
 });
