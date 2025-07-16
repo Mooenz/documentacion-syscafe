@@ -113,12 +113,12 @@ h6 {
 	height: 500px;
 	aspect-ratio: 1/1;
 	-webkit-filter: blur(100px);
-	        filter: blur(100px);
+	filter: blur(100px);
 	opacity: 0.5;
 	border-radius: 50%;
 	background-image: linear-gradient(var(--blue), var(--blue-dark));
 	-webkit-animation: rotate 10s cubic-bezier(0.8, 0.2, 0.2, 0.8) infinite;
-	        animation: rotate 10s cubic-bezier(0.8, 0.2, 0.2, 0.8) infinite;
+	animation: rotate 10s cubic-bezier(0.8, 0.2, 0.2, 0.8) infinite;
 }
 
 .hero__contenido {
@@ -174,6 +174,7 @@ h6 {
 	justify-content: center;
 	gap: 12px;
 	padding: 12px 30px;
+	margin-left: auto;
 	border-radius: 40px;
 	color: #fff;
 	width: -webkit-fit-content;
@@ -362,7 +363,7 @@ h6 {
 .documentacion__informacion--item.activo {
 	display: block;
 	-webkit-animation: fadeIn var(--transition-slow) forwards;
-	        animation: fadeIn var(--transition-slow) forwards;
+	animation: fadeIn var(--transition-slow) forwards;
 }
 
 .documentacion__informacion--contenido {
@@ -389,7 +390,7 @@ h6 {
 	left: 0;
 	background-color: var(--gray1);
 	-webkit-mask-image: linear-gradient(to right, #000 0%, transparent 100%);
-	        mask-image: linear-gradient(to right, #000 0%, transparent 100%);
+	mask-image: linear-gradient(to right, #000 0%, transparent 100%);
 }
 
 .documentacion__informacion--contenedor {
@@ -691,6 +692,10 @@ h6 {
 		padding: 28px 26px 16px 24px;
 		max-width: 350px;
 	}
+
+	.hero__btn {
+		margin-left: 0;
+	}
 }
 @media (min-width: 992px) {
 	.hero_animated:before {
@@ -733,10 +738,6 @@ h6 {
 
 	.documentacion__contenidos {
 		padding: 16px 8px 0 24px;
-	}
-
-	.hero__btn {
-		margin-left: auto;
 	}
 
 	.documentacion__informacion--select {

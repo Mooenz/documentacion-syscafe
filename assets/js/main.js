@@ -186,19 +186,4 @@ const windowIsReady = window.addEventListener('DOMContentLoaded', () => {
 	const year = new Date().getFullYear();
 	const yearElement = document.querySelector('#fecha');
 	yearElement.innerHTML = year;
-
-	// const selects = document.querySelectorAll('.documentacion__informacion--select select');
-	// selects.forEach((select) => {
-	// 	select.addEventListener('change', (e) => {
-	// 		const selectedValue = e.target.value;
-
-	// 		// Vamos al link del select
-	// 		if (selectedValue) {
-	// 			const link = document.querySelector(`a[href="${selectedValue}"]`);
-	// 			if (link) {
-	// 				link.click();
-	// 			}
-	// 		}
-	// 	});
-	// });
 });
